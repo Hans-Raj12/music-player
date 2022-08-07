@@ -13,7 +13,7 @@ export default function Sidebar(){
     const [image, setImage] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkcGuCqZ2u6Titq_adqM1ceg5r7JoOc-_tjhCYvmg&s'
 )
     useEffect(()=>{
-        apiClient.get('me').then((response)=>
+        apiClient.get("me").then((response)=>
         setImage(response.data.images[0].url)
     )
     },[])

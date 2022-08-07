@@ -9,6 +9,7 @@
 }
 
 .playlist-card{
+    position: relative;
     width: 15%;
     height: 40%;
     border-radius: 20px;
@@ -19,6 +20,7 @@
     background: rgb(30,42,60);
     background: linear-gradient(75deg, rgb(40, 58, 88) 0%, rgba(54,69,98,0) 100%);
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .playlist-card:hover{
@@ -30,14 +32,21 @@
 }
 .playlist-image{
     width: 100%;
+    aspect-ratio: 1;
     border-radius: 15px;
 }
 
 .playlist-title{
     font-weight: 800;
     font-size: 16px;
+    display: -webkit-box;
+    overflow: hidden;
     color: #c4d0e3;
     margin: 10px 0px 5px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .playlist-subtitle{
     font-weight: 400;
@@ -60,4 +69,5 @@
     align-items: flex-end;
     justify-content: flex-end;
     padding: 8%;
+    transition: 0.2s ease;
 }

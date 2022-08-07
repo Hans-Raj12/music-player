@@ -24,7 +24,7 @@ export default function Player(){
         <div className='screens-container flex'>
             <div className='left-player-body'></div>
             <div className='right-player-body'>
-                <SongCard/>
+                <SongCard album={currentTrack.album}/>
                 <Queue/>
             </div>
         </div>

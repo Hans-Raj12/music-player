@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react' 
+import { IconContext } from 'react-icons'
+import {AiFillPlayCircle} from 'react-icons/ai'
 import APIKit from '../../spotify'
 import './library.css'
 export default function Library()
@@ -18,6 +20,12 @@ export default function Library()
             <img src={playlist.images[0].url} className='playlist-image' alt='playlist-Art'/>
             <p className='playlist-title'>{playlist.name}</p>
             <p className='playlist-subtitle'>{playlist.tracks.total} Songs</p>
+            <div className='playlist-fade'>
+                <IconContext.Provider value={{size:"50px", color:"#E99D72"}}>
+                    <AiFillPlayCircle/>
+                </IconContext.Provider>
+            </div>
+
         </div>
         ))}
         </div>

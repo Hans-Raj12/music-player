@@ -1,0 +1,10 @@
+circle{
+    transition: all 1s ease-in-out;
+    transform: rotate(93deg);
+    transform-origin: 50% 50%;
+}
+
+.progress-circle{
+    justify-content: center;
+    align-items: center;
+}

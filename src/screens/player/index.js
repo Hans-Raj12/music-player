@@ -16,16 +16,20 @@ export default function Player(){
         {
             apiClient.get("playlists/"+location.state?.id+"/tracks").then(res=>{
                 setTracks(res.data.items)
-                setCurrentTrack(res.data.items[0].track)
+                setCurrentTrack(res.data.items[0]?.track)
             })
         }
     },[location.state])
+    
+    useEffect(()=>{
+        setCurrentTrack(tracks[currentIndex]?.track)
+    },[currentIndex,tracks  ])
     return(
         <div className='screens-container flex'>
             <div className='left-player-body'></div>
             <div className='right-player-body'>
-                <SongCard album={currentTrack.album}/>
-                <Queue/>
+                <SongCard album={currentTrack?.album}/>
+                <Queue tracks={tracks} setCurrentIndex={setCurrentIndex}/>
             </div>
         </div>
 

@@ -5,6 +5,7 @@ import apiClient from '../../spotify'
 import SongCard from '../../components/songCard';
 import Queue from '../../components/Queue';
 import '../../shared/globalStyles.css'
+import AudioPlayer from '../../components/audioPlayer';
 export default function Player(){
     const location = useLocation();
     const [tracks, setTracks] = useState([])
@@ -26,7 +27,9 @@ export default function Player(){
     },[currentIndex,tracks  ])
     return(
         <div className='screens-container flex'>
-            <div className='left-player-body'></div>
+            <div className='left-player-body'>
+                <AudioPlayer currentTrack={currentTrack}/>
+            </div>
             <div className='right-player-body'>
                 <SongCard album={currentTrack?.album}/>
                 <Queue tracks={tracks} setCurrentIndex={setCurrentIndex}/>
